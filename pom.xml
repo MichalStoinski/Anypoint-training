@@ -65,6 +65,19 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.30</version>
 		</dependency>
+		<dependency>
+			<groupId>11d40daa-7b2c-4f32-a044-ce0ce6886821</groupId>
+			<artifactId>american-flights-api</artifactId>
+			<version>1.0.1</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-apikit-module</artifactId>
+			<version>1.12.9</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
 	</dependencies>
 
 	<repositories>

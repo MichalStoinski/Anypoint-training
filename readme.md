@@ -1,0 +1,14 @@
+# Project description
+
+Mulesoft Anypoint project created for Mulesoft training Getting Started with Anypoint Platform (MAX150), which is part of Anypoint Platform Development Fundamentals (DEX401)
+ training.
+
+### Project structure
+
+Main files for Mulesoft Anypoint project are located in path `/src/main/mule`.
+
+### URL
+
+Trainings:
+- [Getting Started with Anypoint Platform (MAX150)](https://trailhead.salesforce.com/users/strailhead/trailmixes/anypoint-platform-development-fundamentals-max-150)
+- [Anypoint Platform Development Fundamentals (DEX401)](https://trailhead.salesforce.com/users/strailhead/trailmixes/getting-started-with-anypoint-platform-dex-401)

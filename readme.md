@@ -12,3 +12,7 @@ Main files for Mulesoft Anypoint project are located in path `/src/main/mule`.
 Trainings:
 - [Getting Started with Anypoint Platform (MAX150)](https://trailhead.salesforce.com/users/strailhead/trailmixes/anypoint-platform-development-fundamentals-max-150)
 - [Anypoint Platform Development Fundamentals (DEX401)](https://trailhead.salesforce.com/users/strailhead/trailmixes/getting-started-with-anypoint-platform-dex-401)
+
+Local API:
+- web console: http://localhost:8081/console/
+- API endpoint: http://localhost:8081/api/flights

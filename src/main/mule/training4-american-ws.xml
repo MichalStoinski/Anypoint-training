@@ -12,13 +12,42 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<db:config name="Database_Config" doc:name="Database Config" doc:id="8b8d23fd-1d46-48e3-80ea-4e8ad8e153f3" >
 		<db:my-sql-connection host="mudb.mule-training.com" port="3306" user="mule" password="mule" database="training" />
 	</db:config>
-	<flow name="training4-american-wsFlow" doc:id="279fa292-a928-48c8-a05c-b970a2cd5a55" >
-		<http:listener doc:name="Listener" doc:id="3f704bac-7b43-45b5-8a8b-dc160f144682" config-ref="HTTP_Listener_config" path="/flights"/>
+	<flow name="getFlights" doc:id="279fa292-a928-48c8-a05c-b970a2cd5a55" >
+		<http:listener doc:name="Listener" doc:id="3f704bac-7b43-45b5-8a8b-dc160f144682" config-ref="HTTP_Listener_config" path="/flights" allowedMethods="GET"/>
 		<db:select doc:name="Select" doc:id="fe33d698-464d-44af-b353-a988b8eec942" config-ref="Database_Config">
 			<db:sql ><![CDATA[SELECT *
 FROM american]]></db:sql>
 		</db:select>
 		<ee:transform doc:name="Transform Message" doc:id="429ef59f-50d6-419e-ae43-baa3d4b69eb0" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload map ( payload01 , indexOfPayload01 ) -> {
+	ID: payload01.ID,
+	code: (payload01.code1 default "") ++ (payload01.code2 default ""),
+	price: payload01.price default 0,
+	departureDate: payload01.takeOffDate as String default "",
+	origin: payload01.fromAirport default "",
+	destination: payload01.toAirport default "",
+	emptySeats: payload01.seatsAvailable default 0,
+	plane: {
+		"type": payload01.planeType default "",
+		totalSeats: payload01.totalSeats default 0
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="getFlightsByID" doc:id="854144a1-04f7-4cb6-845d-9c7d720f45ef" >
+		<http:listener doc:name="Listener" doc:id="78f31099-8faf-46f3-90d6-90920ed22cc6" config-ref="HTTP_Listener_config" path="/flights/{ID}" allowedMethods="GET" />
+		<db:select doc:name="Select" doc:id="68ed1465-848a-4699-9a3c-a83e54e71672" config-ref="Database_Config" >
+			<db:sql ><![CDATA[SELECT *
+FROM american
+WHERE ID = :ID]]></db:sql>
+			<db:input-parameters ><![CDATA[#[{'ID' : attributes.uriParams.ID}]]]></db:input-parameters>
+		</db:select>
+		<ee:transform doc:name="Transform Message" doc:id="1cd448ed-4963-4ec4-9985-68601d0deba4" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json

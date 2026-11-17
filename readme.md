@@ -16,3 +16,9 @@ Trainings:
 Local API:
 - web console: http://localhost:8081/console/
 - API endpoint: http://localhost:8081/api/flights
+
+Public API (CloudHub):
+- Runtime Manager (home): https://anypoint.mulesoft.com/cloudhub/#/console/home/applications
+- Runtime Manager (application): https://anypoint.mulesoft.com/cloudhub/#/console/applications/runtimeFabric/68a0fe12-0e82-4070-a8cd-6c091488f85f/settings
+- Dashboard: https://anypoint.mulesoft.com/cloudhub/#/console/applications/runtimeFabric/68a0fe12-0e82-4070-a8cd-6c091488f85f/observability-dashboard
+- Public Endpoint: https://training4-american-ws-8l5jwe.5sc6y6-2.usa-e2.cloudhub.io/

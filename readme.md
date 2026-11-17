@@ -22,3 +22,10 @@ Public API (CloudHub):
 - Runtime Manager (application): https://anypoint.mulesoft.com/cloudhub/#/console/applications/runtimeFabric/68a0fe12-0e82-4070-a8cd-6c091488f85f/settings
 - Dashboard: https://anypoint.mulesoft.com/cloudhub/#/console/applications/runtimeFabric/68a0fe12-0e82-4070-a8cd-6c091488f85f/observability-dashboard
 - Public Endpoint: https://training4-american-ws-8l5jwe.5sc6y6-2.usa-e2.cloudhub.io/
+
+Deployed applications
+
+| name                   | date & time depl | source file                                            | URL                                                                          |
+|------------------------|------------------|--------------------------------------------------------|------------------------------------------------------------------------------|
+| training4-american-ws  | 17.11.2026 13:39 | training4-american-ws-v2_SP.jar                        | https://training4-american-ws-8l5jwe.5sc6y6-2.usa-e2.cloudhub.io/api/flights |
+| training4-american-api | 17.11.2026 14:02 | american-flights-api-api-gateway-sample-rest-proxy.jar | https://training4-american-api-8l5jwe.5sc6y6-4.usa-e2.cloudhub.io/flights    |
